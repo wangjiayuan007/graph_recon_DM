@@ -50,9 +50,10 @@ Data extent <br />
 Bone<br />
 Select Raw(binary) files when opening<br />
 Data scalar type: unsigned char<br />
-Data extent 0 245<br />
-            0 147<br />
-            0 146<br />
+Data extent <br />
+0 245<br />
+0 147<br />
+0 146<br />
 
 #Dataset:<br />
 https://drive.google.com/open?id=1pnmR66-7MXqwZf9wexPnvtoLB3XAq4Wu<br />
