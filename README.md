@@ -28,7 +28,7 @@ python to_vtk_form_recon_2D.py <dataset_name>
 For example, 'python to_vtk_form_recon_2D.py test_3D' generates the vtp file for test_3D. Then you can open the vtp file in preview directly.
 
 ##3D volume rendering
-.raw files are used for volume rendering
+.raw files are used for volume rendering.
 Open .raw file in preview, 
 
 test_3D:
