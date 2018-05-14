@@ -40,7 +40,7 @@ Data extent <br />
 0 49<br />
 
 ENZO:<br />
-Select Raw(binary) files when opening<br /><br />
+Select Raw(binary) files when opening<br />
 Data scalar type: float<br />
 Data extent <br />
 0 63<br />
