@@ -1,14 +1,14 @@
-spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to paraview format.
+spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to paraview format.<br />
 
-#Compile spt_cpp:
+#Compile spt_cpp:<br />
 
-To compile files in spt_cpp/, change directory to spt_cpp/, run the following command in the terminal:
+To compile files in spt_cpp/, change directory to spt_cpp/, run the following command in the terminal:<br />
 
-Linux/macOS:
-g++ DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp
+Linux/macOS:<br />
+g++ DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp<br />
 
-Windows(g++ need installed):
-g++ -static DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp
+Windows(g++ need installed):<br />
+g++ -static DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp<br />
 
 #Run spt_cpp:
 
@@ -34,9 +34,9 @@ Open .raw file in preview,
 test_3D:
 Select Raw(binary) files when opening
 Data scalar type: float
-Data extent 0 49
-            0 49
-            0 49
+Data extent 0 49<br />
+            0 49<br />
+            0 49<br />
 
 ENZO:
 Select Raw(binary) files when opening
