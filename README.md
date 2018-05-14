@@ -34,16 +34,18 @@ Open .raw file in preview, <br />
 test_3D:<br />
 Select Raw(binary) files when opening<br />
 Data scalar type: float<br />
-Data extent 0 49<br />
-            0 49<br />
-            0 49<br />
+Data extent <br />
+0 49<br />
+0 49<br />
+0 49<br />
 
-ENZO:
-Select Raw(binary) files when opening
-Data scalar type: float
-Data extent 0 63
-            0 63
-            0 63
+ENZO:<br />
+Select Raw(binary) files when opening<br /><br />
+Data scalar type: float<br />
+Data extent <br />
+0 63<br />
+0 63<br />
+0 63<br />
 
 Bone<br />
 Select Raw(binary) files when opening<br />
