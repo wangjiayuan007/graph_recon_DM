@@ -2131,16 +2131,16 @@ void Simplicial2Complex::write_presave(string presave){
 	char* double_buffer = new char[sizeof(double)];
 	double* double_writer = (double*) double_buffer;
 
-//	ofstream v_order("v_order.txt", ios_base::trunc | ios_base::out);
-//	for (int i = 0; i < vertexList.size(); i++) {
-//		Vertex* v = atV(i);
-//		*int_writer = v->getVPosition();
-//		pre_stream.write(int_buffer, sizeof(int));
-//
-//		v_order << v->getoriPosition() << " " << v->getVPosition() <<"\n";
-//
-//	}
-//	v_order.close();
+	//ofstream v_order("v_order.txt", ios_base::trunc | ios_base::out);
+	for (int i = 0; i < vertexList.size(); i++) {
+		Vertex* v = atV(i);
+		*int_writer = v->getVPosition();
+		pre_stream.write(int_buffer, sizeof(int));
+
+		//v_order << v->getoriPosition() << " " << v->getVPosition() <<"\n";
+
+	}
+	//v_order.close();
 	
 	// write ve pair
 	int num_ve = P.mssize();

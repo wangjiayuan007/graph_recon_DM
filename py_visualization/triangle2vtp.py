@@ -3,9 +3,9 @@ import sys
 import vtk
 
 multi = 25e2
-
-vert = np.loadtxt("../dataset/Athens/tri_vert.txt")
-tri = np.loadtxt("../dataset/Athens/tri_triangle.txt")
+dataName = sys.argv[1]
+vert = np.loadtxt("../dataset/"+dataName+"/tri_vert.txt")
+tri = np.loadtxt("../dataset/"+dataName+"/tri_triangle.txt")
 
 vert[:,2] = np.max(vert[:,2])-vert[:,2]
 
@@ -46,6 +46,6 @@ polydata.SetPolys(Triangles)
 polydata.GetPointData().SetScalars(value)
 
 gw = vtk.vtkXMLPolyDataWriter()
-gw.SetFileName("../result/Athens/Athens_suf.vtp")
+gw.SetFileName("../result/"+dataName+"/suf.vtp")
 gw.SetInputData(polydata)
 gw.Write()

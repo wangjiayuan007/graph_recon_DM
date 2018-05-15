@@ -15,7 +15,7 @@ edge = np.loadtxt("../result/" + dataName + "/edge.txt")
 nv = len(vert)
 pts = vtk.vtkPoints()
 for i in range(nv):
-    pts.InsertNextPoint(vert[i,0],vert[i,1],vert[i,2]*multi+10)
+    pts.InsertNextPoint(vert[i,0],vert[i,1],vert[i,2]*multi-10)
 
 ne = len(edge)
 lines = vtk.vtkCellArray()
