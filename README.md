@@ -18,6 +18,22 @@ For example, running on the test dataset dataset/test3D, change directory to spt
 
 ./spt_cpp ../dataset/test_3D/SC.bin ../result/test_3D 20 3<br />
 
+##Input:<br />
+SC.bin is a binary file contains the informaiton of the input triangulation and density function defined on the vertices.<br />
+
+##Output:<br />
+vert.txt: <br />
+x1 y1 (z1) f1<br />
+x2 y2 (z2) f2<br />
+x3 y3 (z3) f3<br />
+...<br />
+
+edge<br />
+vertex1_index1 vertex1_index2<br />
+vertex2_index1 vertex2_index2<br />
+...<br />
+
+
 #Visualization(python3.6 numpy, sys, vtk package needed):<br />
 
 ##Convert output of graph reconstruction to .vtp:<br />
