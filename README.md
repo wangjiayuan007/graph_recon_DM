@@ -30,7 +30,7 @@ x2 y2 (z2) f2<br />
 x3 y3 (z3) f3<br />
 ...<br />
 
-edge<br />
+edge.txt<br />
 vertex1_index1 vertex1_index2<br />
 vertex2_index1 vertex2_index2<br />
 ...<br />
