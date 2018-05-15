@@ -43,7 +43,8 @@ Change directory to py_visualization/ (If not using the same directory structure
 
 python to_vtk_form_recon_2D.py <dataset_name><br />
 
-For example, 'python to_vtk_form_recon_2D.py test_3D' generates the vtp file for test_3D. Then you can open the vtp file in preview directly.<br />
+For example, 'python to_vtk_form_recon_3D.py test_3D' generates the vtp file for test_3D. Then you can open the vtp file in preview directly.<br />
+'python to_vtk_form_recon_2D.py Berlin' generates the vtp file for Berlin.<br />
 
 ##3D volume rendering<br />
 .raw files are used for volume rendering.<br />
