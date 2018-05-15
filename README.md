@@ -41,7 +41,11 @@ vertex2_index1 vertex2_index2<br />
 ##Convert output of graph reconstruction to .vtp:<br />
 Change directory to py_visualization/ (If not using the same directory structure, the directory location needs to be changed inside the code), run the following command in the terminal:<br />
 
+2D dataset:<br />
 python to_vtk_form_recon_2D.py <dataset_name><br />
+
+3D dataset:<br />
+python to_vtk_form_recon_3D.py <dataset_name><br />
 
 For example, 'python to_vtk_form_recon_3D.py test_3D' generates the vtp file for test_3D. Then you can open the vtp file in Paraview directly.<br />
 'python to_vtk_form_recon_2D.py Berlin' generates the vtp file for Berlin.<br />
