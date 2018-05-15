@@ -1,4 +1,4 @@
-spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to paraview format.<br />
+spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to Paraview format.<br />
 
 #Compile spt_cpp:<br />
 
@@ -43,7 +43,7 @@ Change directory to py_visualization/ (If not using the same directory structure
 
 python to_vtk_form_recon_2D.py <dataset_name><br />
 
-For example, 'python to_vtk_form_recon_3D.py test_3D' generates the vtp file for test_3D. Then you can open the vtp file in preview directly.<br />
+For example, 'python to_vtk_form_recon_3D.py test_3D' generates the vtp file for test_3D. Then you can open the vtp file in Paraview directly.<br />
 'python to_vtk_form_recon_2D.py Berlin' generates the vtp file for Berlin.<br />
 
 ##3D volume rendering<br />
