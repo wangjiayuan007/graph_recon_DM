@@ -15,8 +15,10 @@ g++ -static DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp<br />
 Usage: ./spt_cpp <input_file> <output_file> <persistence_threshold> <dimension> [use_previous]<br />
 
 For example, running on the test dataset dataset/test3D, change directory to spt_cpp/, run the following command: <br />
-
+3D:<br />
 ./spt_cpp ../dataset/test_3D/SC.bin ../result/test_3D 20 3<br />
+2D:<br />
+./spt_cpp ../dataset/Berlin/SC.bin ../result/Berlin 0.01 2<br />
 
 ##Input:<br />
 SC.bin is a binary file contains the informaiton of the input triangulation and density function defined on the vertices.<br />
