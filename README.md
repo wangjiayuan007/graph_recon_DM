@@ -48,7 +48,7 @@ For example, 'python to_vtk_form_recon_3D.py test_3D' generates the vtp file for
 
 ##3D volume rendering<br />
 .raw files are used for volume rendering.<br />
-Open .raw file in preview, <br />
+Open .raw file in Paraview, <br />
 
 test_3D:<br />
 Select Raw(binary) files when opening<br />
@@ -78,5 +78,5 @@ Data extent <br />
 https://drive.google.com/open?id=1pnmR66-7MXqwZf9wexPnvtoLB3XAq4Wu<br />
 2D datasets: Athens, Berlin<br />
 3D datasets: ENZO, bone<br />
-sur.vtp is the density terrain of 2D datasets
+sur.vtp is the density terrain of 2D datasets, which can be opened directly in Paraview
 
