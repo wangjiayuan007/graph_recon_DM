@@ -57,5 +57,7 @@ Data extent <br />
 
 #Dataset:<br />
 https://drive.google.com/open?id=1pnmR66-7MXqwZf9wexPnvtoLB3XAq4Wu<br />
+2D datasets: Athens, Berlin<br />
+3D datasets: ENZO, bone<br />
 sur.vtp is the density terrain of 2D datasets
 
