@@ -1,3 +1,5 @@
+Paper on arXiv: https://arxiv.org/abs/1803.05093 <br />
+
 spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to Paraview format.<br />
 
 #Compile spt_cpp:<br />
