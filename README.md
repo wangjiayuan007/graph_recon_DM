@@ -24,6 +24,7 @@ For example, running on the test dataset dataset/test3D, change directory to spt
 
 ##Input:<br />
 SC.bin is a binary file contains the informaiton of the input triangulation and density function defined on the vertices.<br />
+py_visualization/ to_SC transfer triangulation files into binary files.<br />
 
 ##Output:<br />
 vert.txt: <br />
