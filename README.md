@@ -114,6 +114,7 @@ e2_adjacent_vertex_index1 e2_adjacent_vertex_index2
 
 ...
 
+**visualization.png** is the plot of the reconstructed graph. Paraview is recommended for 3D visualization.
 
 ## Visualization by paraview(python3.6 numpy, sys, vtk package needed):
 
