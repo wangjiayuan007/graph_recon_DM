@@ -2,17 +2,23 @@
 
 Paper on arXiv: https://arxiv.org/abs/1803.05093 
 
-spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to Paraview format.<br />
+spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to Paraview format. You need to compile spt_cpp first and call it from graphRecon.py.
 
-Compile spt_cpp:<br />
+## Compile spt_cpp
 
-To compile files in spt_cpp/, change directory to spt_cpp/, run the following command in the terminal:<br />
+To compile files in spt_cpp/, change directory to spt_cpp/, run the following command in the terminal:
 
-Linux/macOS:<br />
-g++ DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp<br />
+Linux/macOS:
+```
+g++ DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp
+```
 
-Windows(g++ need installed):<br />
+Windows(g++ need installed):
+```
 g++ -static DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp<br />
+```
+
+
 
 #Run spt_cpp:<br />
 
