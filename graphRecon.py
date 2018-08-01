@@ -356,6 +356,44 @@ def read_grid3d(i_file_name):
     #print(grid3d)
     return grid3d
 
+def cmp_by_pre2D(i_file_name,i_th):
+    subprocess.check_call(
+        [r"spt_cpp/spt_cpp", "dataset/" + i_file_name + '/SC.bin', "result/" + i_file_name + "/", str(i_th),
+         str(2), 'result/' + i_file_name + '/presave.bin'])
+
+    o_vert = np.loadtxt("result/"+i_file_name+"/vert.txt")
+    o_edge = np.loadtxt("result/"+i_file_name+"/edge.txt")
+
+    if len(o_edge) == 0:
+        print('The reconstruction is empty!')
+        sys.exit(0)
+
+    o_vert = o_vert[:, :2]
+
+    # visualize result
+    stable_vert = o_vert.copy()
+    stable_vert[:, 0] = o_vert[:, 1]
+    stable_vert[:, 1] = o_vert[:, 0]
+    o_vert = stable_vert
+
+    return o_vert, o_edge
+
+def cmp_by_pre3D(i_file_name,i_th):
+    subprocess.check_call(
+        [r"spt_cpp/spt_cpp", "dataset/" + i_file_name + '/SC.bin', "result/" + i_file_name + "/", str(i_th),
+         str(3), 'result/' + i_file_name + '/presave.bin'])
+
+    o_vert = np.loadtxt("result/"+i_file_name+"/vert.txt")
+    o_edge = np.loadtxt("result/"+i_file_name+"/edge.txt")
+
+    if len(o_edge) == 0:
+        print('The reconstruction is empty!')
+        sys.exit(0)
+
+    o_vert = o_vert[:, :3]
+
+    return o_vert, o_edge
+
 # file_name = 'Berlin'
 # input_arg = '-t'
 # dimension = 2
@@ -386,13 +424,39 @@ flip = False
 # 2D
 if dimension == 2:
     ## input grid
-    if input_arg=='-g':
-        grid2d = np.loadtxt('dataset/grid2D/grid.txt')
+    if os.path.isfile('result/'+file_name+'/presave.bin') and os.path.isfile('dataset/'+file_name+'/SC.bin'):
+        print('Use presaved data.')
+        recon_vert, recon_edge = cmp_by_pre2D(file_name,threshold)
+
+        if len(recon_edge)>0:
+            # visualize vert and edge
+            recon_lines = []
+            createLines(recon_lines, recon_edge, recon_vert)
+            fig = plt.figure()
+            plt.clf()
+
+            ax1 = fig.add_subplot(111)
+            #ax1.imshow(grid2d, cmap='gray')
+            #drawLines(h0_lines, 'blue', 0.5, 1, ax1)
+            drawLines(recon_lines, 'red', 0.5, 2, ax1)
+
+            x_min = np.min(recon_vert[:,0])
+            x_max = np.max(recon_vert[:,0])
+            y_min = np.min(recon_vert[:,1])
+            y_max = np.max(recon_vert[:,1])
+
+            ax1.set_xlim(x_min, x_max)
+            ax1.set_ylim(y_max, y_min)
+            plt.savefig('result/'+file_name+'/visualization.png', dpi=200)
+
+    elif input_arg=='-g':
+        grid2d = np.loadtxt('dataset/'+file_name+'/grid.txt')
         # flip
         #grid2d = np.max(grid2d)- grid2d
         grid2d = grid2d/np.max(np.abs(grid2d))
 
         recon_vert, recon_edge = cmp_dm_img_grid2D(grid2d, threshold, file_name,subsample_grid)
+
 
         if len(recon_edge)>0:
             # visualize vert and edge
@@ -433,7 +497,23 @@ if dimension == 2:
             plt.savefig('result/'+file_name+'/visualization.png', dpi=200)
 # 3D
 elif dimension == 3:
-    if input_arg == '-g':
+    if os.path.isfile('result/'+file_name+'/presave.bin') and os.path.isfile('dataset/'+file_name+'/SC.bin'):
+        print('Use presaved data.')
+        recon_vert, recon_edge = cmp_by_pre3D(file_name,threshold)
+
+        # 3d plot
+        if len(recon_edge) > 0:
+            fig = plt.figure()
+            ax = a3.Axes3D(fig)
+            for e in recon_edge:
+                v1_ind = int(e[0])
+                v2_ind = int(e[1])
+                v1 = recon_vert[v1_ind]
+                v2 = recon_vert[v2_ind]
+                ax.plot([v1[0],v2[0]],[v1[1],v2[1]],[v1[2],v2[2]], color='red', alpha=1, linewidth=1)
+            #plt.show()
+            fig.savefig('result/'+file_name+'/visualization.png', dpi=200)
+    elif input_arg == '-g':
         grid3d = read_grid3d(file_name)
         grid3d = grid3d/np.max(grid3d)
 

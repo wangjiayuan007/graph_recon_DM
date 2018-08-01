@@ -4,7 +4,7 @@ Paper on arXiv: https://arxiv.org/abs/1803.05093
 
 ## Introduction
 
-spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to Paraview format. You need to compile spt_cpp first and call it from graphRecon.py. Please maintain the given directory structure. To use your own dataset, create directory dataset/your_dataset_name/, and put everything in this directory. The outputs can be found in result/.
+spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to Paraview format. You need to compile spt_cpp first and call it from graphRecon.py. Please maintain the given directory structure. To use your own dataset, create directory dataset/your_dataset_name/, and put everything in this directory. The outputs can be found in result/. Once you complete one run on your dataset, persistence will be saved and you don't need to compute it again when you want to experiment with different threshold.
 
 ## Compile spt_cpp
 
