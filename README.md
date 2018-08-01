@@ -4,7 +4,7 @@ Paper on arXiv: https://arxiv.org/abs/1803.05093
 
 ## Introduction
 
-spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to Paraview format. You need to compile spt_cpp first and call it from graphRecon.py. Please maintain the given directory structure. 
+spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to Paraview format. You need to compile spt_cpp first and call it from graphRecon.py. Please maintain the given directory structure. To use your own dataset, create directory dataset/your_dataset_name/, and put everything in this directory. The outputs can be found in result/.
 
 ## Compile spt_cpp
 
@@ -24,7 +24,7 @@ g++ -static DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp
 
 Usage: 
 
-python graphRecon.py <dataset_name> <dataset_form> <dimension> <threshold>
+python graphRecon.py  <dataset_name>  <dataset_form>  <dimension>  <threshold>
 
 <dataset_form>   -g input grid
 
