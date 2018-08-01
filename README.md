@@ -24,11 +24,11 @@ g++ -static DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp
 
 Usage: 
 
-python graphRecon.py  <dataset_name>  <dataset_form>  <dimension>  <threshold>
+python graphRecon.py  dataset_name  dataset_form  dimension  threshold
 
-<dataset_form>   -g input grid
+dataset_form   -g input grid
 
-<dataset_form>   -t input triangulation
+dataset_form   -t input triangulation
 
 2D triangulation as input:
 ```
