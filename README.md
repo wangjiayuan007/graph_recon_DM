@@ -23,11 +23,31 @@ g++ -static DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp
 ## Running the tests
 
 Usage: 
+
 python graphRecon.py <dataset_name> <dataset_form> <dimension> <threshold>
+
 <dataset_form>   -g input grid
+
 <dataset_form>   -t input triangulation
 
+2D triangulation as input:
+```
+python graphRecon.py Berlin -t 2 0.1
+```
+2D grid as input:
+```
+python graphRecon.py grid2D -g 2 0.6
+```
+3D triangulation as input:
+```
+python graphRecon.py test_3D -t 3 0.05
+```
+3D grid as input:
+```
+python graphRecon.py test_3D -g 3 0.05
+```
 
+All datasets can be downloaded [here](https://drive.google.com/drive/u/1/folders/1pnmR66-7MXqwZf9wexPnvtoLB3XAq4Wu).
 
 ## Input
 
@@ -97,120 +117,80 @@ e2_adjacent_vertex_index1 e2_adjacent_vertex_index2
 
 ## Visualization by paraview(python3.6 numpy, sys, vtk package needed):
 
-##Convert output of graph reconstruction to .vtp:<br />
-Change directory to py_visualization/ (If not using the same directory structure, the directory location needs to be changed inside the code), run the following command in the terminal:<br />
+### Convert output of graph reconstruction to .vtp:
 
-2D dataset:<br />
-python to_vtk_form_recon_2D.py <dataset_name><br />
+Change directory to py_visualization/ (If not using the same directory structure, the directory location needs to be changed inside the code), run the following command in the terminal:
 
-3D dataset:<br />
-python to_vtk_form_recon_3D.py <dataset_name><br />
+2D dataset:
+```
+python to_vtk_form_recon_2D.py <dataset_name>
+```
+3D dataset:
+```
+python to_vtk_form_recon_3D.py <dataset_name>
+```
+For example, 'python to_vtk_form_recon_3D.py test_3D' generates the vtp file for test_3D. Then you can open the vtp file in Paraview directly.
 
-For example, 'python to_vtk_form_recon_3D.py test_3D' generates the vtp file for test_3D. Then you can open the vtp file in Paraview directly.<br />
-'python to_vtk_form_recon_2D.py Berlin' generates the vtp file for Berlin.<br />
+'python to_vtk_form_recon_2D.py Berlin' generates the vtp file for Berlin.
 
-##3D volume rendering<br />
-.raw files are used for volume rendering.<br />
-Open .raw file in Paraview, <br />
+### 3D volume rendering
 
-test_3D:<br />
-Select Raw(binary) files when opening<br />
-Data scalar type: float<br />
-Data extent <br />
-0 49<br />
-0 49<br />
-0 49<br />
+Instructions on volume rendering see [here](http://wiki.rac.manchester.ac.uk/community/ParaView/Tips/LoadImageStack).
 
-ENZO:<br />
-Select Raw(binary) files when opening<br />
-Data scalar type: float<br />
-Data extent <br />
-0 63<br />
-0 63<br />
-0 63<br />
+.raw files are used for volume rendering.
 
-Bone<br />
-Select Raw(binary) files when opening<br />
-Data scalar type: unsigned char<br />
-Data extent <br />
-0 245<br />
-0 147<br />
-0 146<br />
+Open .raw file in Paraview, 
 
+test_3D:
 
+Select Raw(binary) files when opening
 
-#Run spt_cpp:<br />
+Data scalar type: float
 
-Usage: ./spt_cpp <input_file> <output_file> <persistence_threshold> <dimension> [use_previous]<br />
+Data extent
 
-For example, running on the test dataset dataset/test3D, change directory to spt_cpp/, run the following command: <br />
-3D:<br />
-./spt_cpp ../dataset/test_3D/SC.bin ../result/test_3D 20 3<br />
-2D:<br />
-./spt_cpp ../dataset/Berlin/SC.bin ../result/Berlin 0.01 2<br />
+0 49
 
-##Input:<br />
-SC.bin is a binary file contains the informaiton of the input triangulation and density function defined on the vertices.<br />
-py_visualization/ to_SC transfer triangulation files into binary files.<br />
+0 49
 
-##Output:<br />
-vert.txt: <br />
-x1 y1 (z1) f1<br />
-x2 y2 (z2) f2<br />
-x3 y3 (z3) f3<br />
-...<br />
+0 49
 
-edge.txt<br />
-vertex1_index1 vertex1_index2<br />
-vertex2_index1 vertex2_index2<br />
-...<br />
+ENZO:
+
+Select Raw(binary) files when opening
+
+Data scalar type: float
+
+Data extent
+
+0 63
+
+0 63
+
+0 63
+
+Bone
+
+Select Raw(binary) files when opening
+
+Data scalar type: unsigned char
+
+Data extent
+
+0 245
+
+0 147
+
+0 146
 
 
-#Visualization(python3.6 numpy, sys, vtk package needed):<br />
+## Dataset:
 
-##Convert output of graph reconstruction to .vtp:<br />
-Change directory to py_visualization/ (If not using the same directory structure, the directory location needs to be changed inside the code), run the following command in the terminal:<br />
+All datasets can be downloaded [here](https://drive.google.com/drive/u/1/folders/1pnmR66-7MXqwZf9wexPnvtoLB3XAq4Wu).
 
-2D dataset:<br />
-python to_vtk_form_recon_2D.py <dataset_name><br />
+2D datasets: Athens, Berlin
 
-3D dataset:<br />
-python to_vtk_form_recon_3D.py <dataset_name><br />
+3D datasets: ENZO, bone,test_3D 
 
-For example, 'python to_vtk_form_recon_3D.py test_3D' generates the vtp file for test_3D. Then you can open the vtp file in Paraview directly.<br />
-'python to_vtk_form_recon_2D.py Berlin' generates the vtp file for Berlin.<br />
-
-##3D volume rendering<br />
-.raw files are used for volume rendering.<br />
-Open .raw file in Paraview, <br />
-
-test_3D:<br />
-Select Raw(binary) files when opening<br />
-Data scalar type: float<br />
-Data extent <br />
-0 49<br />
-0 49<br />
-0 49<br />
-
-ENZO:<br />
-Select Raw(binary) files when opening<br />
-Data scalar type: float<br />
-Data extent <br />
-0 63<br />
-0 63<br />
-0 63<br />
-
-Bone<br />
-Select Raw(binary) files when opening<br />
-Data scalar type: unsigned char<br />
-Data extent <br />
-0 245<br />
-0 147<br />
-0 146<br />
-
-#Dataset:<br />
-https://drive.google.com/open?id=1pnmR66-7MXqwZf9wexPnvtoLB3XAq4Wu<br />
-2D datasets: Athens, Berlin<br />
-3D datasets: ENZO, bone<br />
 sur.vtp is the density terrain of 2D datasets, which can be opened directly in Paraview
 
