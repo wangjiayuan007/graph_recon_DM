@@ -2,6 +2,33 @@
 
 Paper on arXiv: https://arxiv.org/abs/1803.05093 
 
+## Introduction
+
+spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to Paraview format. You need to compile spt_cpp first and call it from graphRecon.py. Please maintain the given directory structure. 
+
+## Compile spt_cpp
+
+To compile files in spt_cpp/, change directory to spt_cpp/, run the following command in the terminal:
+
+Linux/macOS:
+```
+g++ DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp
+```
+
+Windows(g++ need installed):
+```
+g++ -static DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp
+```
+
+## Running the tests
+
+Usage: 
+python graphRecon.py <dataset_name> <dataset_form> <dimension> <threshold>
+<dataset_form>   -g input grid
+<dataset_form>   -t input triangulation
+
+
+
 ## Input
 
 The input could be 2D/3D grids or trianglations from density functions.
@@ -68,21 +95,47 @@ e2_adjacent_vertex_index1 e2_adjacent_vertex_index2
 ...
 
 
-spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to Paraview format. You need to compile spt_cpp first and call it from graphRecon.py.
+## Visualization by paraview(python3.6 numpy, sys, vtk package needed):
 
-## Compile spt_cpp
+##Convert output of graph reconstruction to .vtp:<br />
+Change directory to py_visualization/ (If not using the same directory structure, the directory location needs to be changed inside the code), run the following command in the terminal:<br />
 
-To compile files in spt_cpp/, change directory to spt_cpp/, run the following command in the terminal:
+2D dataset:<br />
+python to_vtk_form_recon_2D.py <dataset_name><br />
 
-Linux/macOS:
-```
-g++ DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp
-```
+3D dataset:<br />
+python to_vtk_form_recon_3D.py <dataset_name><br />
 
-Windows(g++ need installed):
-```
-g++ -static DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp
-```
+For example, 'python to_vtk_form_recon_3D.py test_3D' generates the vtp file for test_3D. Then you can open the vtp file in Paraview directly.<br />
+'python to_vtk_form_recon_2D.py Berlin' generates the vtp file for Berlin.<br />
+
+##3D volume rendering<br />
+.raw files are used for volume rendering.<br />
+Open .raw file in Paraview, <br />
+
+test_3D:<br />
+Select Raw(binary) files when opening<br />
+Data scalar type: float<br />
+Data extent <br />
+0 49<br />
+0 49<br />
+0 49<br />
+
+ENZO:<br />
+Select Raw(binary) files when opening<br />
+Data scalar type: float<br />
+Data extent <br />
+0 63<br />
+0 63<br />
+0 63<br />
+
+Bone<br />
+Select Raw(binary) files when opening<br />
+Data scalar type: unsigned char<br />
+Data extent <br />
+0 245<br />
+0 147<br />
+0 146<br />
 
 
 
