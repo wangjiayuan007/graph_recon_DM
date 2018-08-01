@@ -6,11 +6,15 @@ Paper on arXiv: https://arxiv.org/abs/1803.05093
 
 The input could be 2D/3D grids or trianglations from density functions.
 
-2D grid: the input text file should store the 2D grid as a matrixs. You can simply store your 2D array in python using np.savetxt(). 
+### 2D grid: 
 
-3D grid: the first line of the input text file is the dimension of the 3D grid m,n,l. And the 3D array is stored as 1D array after being flattened with np.reshape([m*n*l]).
+the input text file should store the 2D grid as a matrixs. You can simply store your 2D array in python using np.savetxt(). 
 
-2D/3D triangulations:
+### 3D grid:
+
+the first line of the input text file is the dimension of the 3D grid m,n,l. And the 3D array is stored as 1D array after being flattened with np.reshape([m* n* l]).
+
+### 2D/3D triangulations:
 
 The triangulation is stored in three files: tri_vert.txt, tri_edge.txt and tri_triangle.txt
 
