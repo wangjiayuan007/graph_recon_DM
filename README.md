@@ -30,6 +30,10 @@ dataset_form   -g input grid
 
 dataset_form   -t input triangulation
 
+dimension 2 or 3
+
+threshold [0,1] (the density function is normalized to [0,1])
+
 2D triangulation as input:
 ```
 python graphRecon.py Berlin -t 2 0.1
