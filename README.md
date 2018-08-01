@@ -2,6 +2,15 @@
 
 Paper on arXiv: https://arxiv.org/abs/1803.05093 
 
+## Input
+
+The input could be 2D/3D grids or trianglations from density functions.
+
+2D grid: the input text file should store the 2D grid as a matrixs. You can simply store your 2D array in python using np.savetxt(). See the [example](https://pages.github.com/).
+
+## Output
+
+
 spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to Paraview format. You need to compile spt_cpp first and call it from graphRecon.py.
 
 ## Compile spt_cpp
@@ -15,7 +24,7 @@ g++ DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp
 
 Windows(g++ need installed):
 ```
-g++ -static DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp<br />
+g++ -static DiMoSC.cpp -I./phat/include -std=c++11 -o spt_cpp
 ```
 
 
