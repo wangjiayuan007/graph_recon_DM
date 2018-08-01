@@ -18,7 +18,7 @@ the first line of the input text file is the dimension of the 3D grid m,n,l. And
 
 The triangulation is stored in three files: tri_vert.txt, tri_edge.txt and tri_triangle.txt
 
-tri_vert.txt:
+**tri_vert.txt**:
 
 x1 y1 (z1) f1 
 
@@ -28,7 +28,7 @@ x3 y3 (z3) f3
 
 ...
 
-tri_edge.txt:
+**tri_edge.txt**:
 
 e1_adjacent_vertex_index1 e1_adjacent_vertex_index2
 
@@ -36,7 +36,7 @@ e2_adjacent_vertex_index1 e2_adjacent_vertex_index2
 
 ...
 
-tri_triangle.txt:
+**tri_triangle.txt**:
 
 t1_adjacent_vertex_index1 t1_adjacent_vertex_index2 t1_adjacent_vertex_index3
 
@@ -46,6 +46,26 @@ t2_adjacent_vertex_index1 t2_adjacent_vertex_index2 t2_adjacent_vertex_index3
 
 
 ## Output
+
+The output graph is stored in two files: vert.txt and edge.txt
+
+**vert.txt**: 
+
+x1 y1 (z1) f1
+
+x2 y2 (z2) f2
+
+x3 y3 (z3) f3
+
+...
+
+**edge.txt**:
+
+e1_adjacent_vertex_index1 e1_adjacent_vertex_index2
+
+e2_adjacent_vertex_index1 e2_adjacent_vertex_index2
+
+...
 
 
 spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to Paraview format. You need to compile spt_cpp first and call it from graphRecon.py.
