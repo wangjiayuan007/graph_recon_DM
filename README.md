@@ -204,5 +204,6 @@ sur.vtp is the density terrain of 2D datasets, which can be opened directly in P
 
 ## Reference:
 [1] Wang, Suyi, Yusu Wang, and Yanjie Li. "Efficient map reconstruction and augmentation via topological methods." Proceedings of the 23rd SIGSPATIAL International Conference on Advances in Geographic Information Systems. ACM, 2015.
+
 [2] Dey, Tamal K., Jiayuan Wang, and Yusu Wang. "Graph reconstruction by discrete Morse theory." arXiv preprint arXiv:1803.05093 (2018).
 
