@@ -4,7 +4,7 @@ Paper on arXiv: https://arxiv.org/abs/1803.05093
 
 ## Introduction
 
-spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to Paraview format. You need to compile spt_cpp first and call it from graphRecon.py. Please maintain the given directory structure. To use your own dataset, create directory dataset/your_dataset_name/, and put everything in this directory. The outputs can be found in result/. Once you complete one run on your dataset, persistence will be saved and you don't need to compute it again when you want to experiment with different threshold.
+spt_cpp/ contains the source code for graph reconstruction, py_visualization/ contains the source code converting result to Paraview format. You need to compile spt_cpp first and call it from graphRecon.py. Please maintain the given directory structure. To use your own dataset, create directory dataset/your_dataset_name/, and put everything in this directory. The outputs can be found in result/. Once you complete one run on your dataset, persistence will be saved and you don't need to compute it again when you want to experiment with different threshold. density_estimation.cpp is for converting GPS trajectories to density fields.
 
 ## Compile spt_cpp
 
@@ -201,4 +201,8 @@ All datasets can be downloaded [here](https://drive.google.com/drive/u/1/folders
 3D datasets: ENZO, bone,test_3D 
 
 sur.vtp is the density terrain of 2D datasets, which can be opened directly in Paraview
+
+## Reference:
+[1] Wang, Suyi, Yusu Wang, and Yanjie Li. "Efficient map reconstruction and augmentation via topological methods." Proceedings of the 23rd SIGSPATIAL International Conference on Advances in Geographic Information Systems. ACM, 2015.
+[2] Dey, Tamal K., Jiayuan Wang, and Yusu Wang. "Graph reconstruction by discrete Morse theory." arXiv preprint arXiv:1803.05093 (2018).
 
